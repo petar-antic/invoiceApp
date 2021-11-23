@@ -4,7 +4,6 @@ import GoBack from './GoBack';
 import { InvoiceContext } from '../Contexts/InvoiceContext';
 
 const EditItem = () => {
-    const { invoiceList, activeInvoice } = useContext(InvoiceContext);
     return (
         <div className="editItem">
             <GoBack />
