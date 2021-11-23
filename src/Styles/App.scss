@@ -1,0 +1,9 @@
+@import '../Styles/Variables/Variables.scss';
+
+#app {
+    font-family: $fontFamily;
+    .container {
+        background: $lightBg;
+        padding: 0 24px;
+    }
+}

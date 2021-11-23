@@ -1,0 +1,365 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@500;700&display=swap");
+.viewInvoice {
+  padding-top: 32px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 16px;
+}
+
+.viewInvoice .viewStatus {
+  padding: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 0px 10px 10px -10px rgba(72, 84, 159, 0.100397);
+          box-shadow: 0px 10px 10px -10px rgba(72, 84, 159, 0.100397);
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.viewInvoice .viewStatus .status {
+  grid-area: status;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 40px;
+  width: 104px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-item-align: center;
+      align-self: center;
+  -webkit-column-gap: 6px;
+          column-gap: 6px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  justify-self: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 6px;
+}
+
+.viewInvoice .viewStatus .status .statusName {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+  text-transform: capitalize;
+}
+
+.viewInvoice .viewStatus .status .circle {
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+}
+
+.viewInvoice .viewStatus .pending {
+  background: rgba(255, 143, 0, 0.06);
+}
+
+.viewInvoice .viewStatus .pending .circle {
+  background: #ff8f00;
+}
+
+.viewInvoice .viewStatus .pending .statusName {
+  color: #ff8f00;
+}
+
+.viewInvoice .viewStatus .paid {
+  background: rgba(51, 214, 159, 0.06);
+}
+
+.viewInvoice .viewStatus .paid .circle {
+  background: #33d69f;
+}
+
+.viewInvoice .viewStatus .paid .statusName {
+  color: #33d69f;
+}
+
+.viewInvoice .viewStatus .draft {
+  background: rgba(55, 59, 83, 0.06);
+}
+
+.viewInvoice .viewStatus .draft .circle {
+  background: #373b53;
+}
+
+.viewInvoice .viewStatus .draft .statusName {
+  color: #373b53;
+}
+
+.viewInvoice .invoiceInfo {
+  padding: 24px;
+  background: #ffffff;
+  padding-bottom: 56px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-shadow: 0px 10px 10px -10px rgba(72, 84, 159, 0.100397);
+          box-shadow: 0px 10px 10px -10px rgba(72, 84, 159, 0.100397);
+  border-radius: 8px;
+}
+
+.viewInvoice .invoiceInfo .topSide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 30px;
+  padding-bottom: 31px;
+}
+
+.viewInvoice .invoiceInfo .topSide .head div {
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+}
+
+.viewInvoice .invoiceInfo .topSide .head .hexId {
+  color: #0c0e16;
+  font-weight: 700;
+  padding-bottom: 4px;
+}
+
+.viewInvoice .invoiceInfo .topSide .head .hexId span {
+  color: #7e88c3;
+}
+
+.viewInvoice .invoiceInfo .topSide .head .description {
+  font-weight: 500;
+  color: #7e88c3;
+}
+
+.viewInvoice .invoiceInfo .topSide .senderAddress div {
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 18px;
+  letter-spacing: -0.229167px;
+  color: #7e88c3;
+}
+
+.viewInvoice .invoiceInfo .midSide {
+  padding-bottom: 40px;
+  display: -ms-grid;
+  display: grid;
+  row-gap: 32px;
+  grid-auto-flow: row;
+      grid-template-areas: 'leftColumn rightColumn' 'emailBox emailBox';
+}
+
+.viewInvoice .invoiceInfo .midSide .leftColumn {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: leftColumn;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 32px;
+}
+
+.viewInvoice .invoiceInfo .midSide .leftColumn .invoiceDateBox,
+.viewInvoice .invoiceInfo .midSide .leftColumn .paymentDueBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 12px;
+}
+
+.viewInvoice .invoiceInfo .midSide .leftColumn .invoiceDateBox .title,
+.viewInvoice .invoiceInfo .midSide .leftColumn .paymentDueBox .title {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+  color: #7e88c3;
+}
+
+.viewInvoice .invoiceInfo .midSide .leftColumn .invoiceDateBox .date,
+.viewInvoice .invoiceInfo .midSide .leftColumn .paymentDueBox .date {
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: -0.3125px;
+  color: #0c0e16;
+}
+
+.viewInvoice .invoiceInfo .midSide .rightColumn {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: rightColumn;
+}
+
+.viewInvoice .invoiceInfo .midSide .rightColumn .clientName .billTo {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+  color: #7e88c3;
+}
+
+.viewInvoice .invoiceInfo .midSide .rightColumn .clientName .name {
+  padding: 12px 0px 8px 0px;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: -0.3125px;
+  color: #0c0e16;
+}
+
+.viewInvoice .invoiceInfo .midSide .rightColumn .clientAddress div {
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 18px;
+  letter-spacing: -0.229167px;
+  color: #7e88c3;
+}
+
+.viewInvoice .invoiceInfo .midSide .emailBox {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: emailBox;
+}
+
+.viewInvoice .invoiceInfo .midSide .emailBox .sentTo {
+  padding-bottom: 12px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+  color: #7e88c3;
+}
+
+.viewInvoice .invoiceInfo .midSide .emailBox .clientEmail {
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: -0.3125px;
+  color: #0c0e16;
+}
+
+.viewInvoice .invoiceInfo .botSide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 8px;
+}
+
+.viewInvoice .invoiceInfo .botSide .task {
+  background: #f9fafe;
+  padding: 24px;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+      grid-template-areas: 'title price' 'quantity price';
+}
+
+.viewInvoice .invoiceInfo .botSide .task .title {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: title;
+  padding-bottom: 8px;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+  color: #0c0e16;
+}
+
+.viewInvoice .invoiceInfo .botSide .task .quantity {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: quantity;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+  color: #7e88c3;
+}
+
+.viewInvoice .invoiceInfo .botSide .task .price {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 2;
+  grid-area: price;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+  color: #0c0e16;
+}
+
+.viewInvoice .invoiceInfo .botSide .grandTotal {
+  padding: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #373b53;
+  border-radius: 0px 0px 8px 8px;
+}
+
+.viewInvoice .invoiceInfo .botSide .grandTotal .title {
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 18px;
+  letter-spacing: -0.229167px;
+  color: #ffffff;
+}
+
+.viewInvoice .invoiceInfo .botSide .grandTotal .price {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 32px;
+  letter-spacing: -0.416667px;
+  color: #ffffff;
+}
+
+.hidden {
+  display: none;
+}
+/*# sourceMappingURL=ViewInvoice.css.map */

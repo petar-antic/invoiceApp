@@ -1,0 +1,260 @@
+@import '../Variables/Variables.scss';
+
+.viewInvoice {
+    padding-top: 32px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+    .viewStatus {
+        padding: 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0px 10px 10px -10px $invice-shadow;
+        border-radius: 8px;
+        background: $white;
+        .status {
+            grid-area: status;
+            display: flex;
+            height: 40px;
+            width: 104px;
+            flex-direction: row;
+            align-self: center;
+            column-gap: 6px;
+            justify-content: center;
+            justify-self: flex-end;
+            align-items: center;
+            border-radius: 6px;
+            .statusName {
+                font-weight: $bold;
+                font-size: $size4;
+                line-height: $height4;
+                letter-spacing: -0.25px;
+                text-transform: capitalize;
+            }
+            .circle {
+                height: 8px;
+                width: 8px;
+                border-radius: 50%;
+            }
+        }
+        .pending {
+            background: $pendingBg;
+            .circle {
+                background: $pending;
+            }
+            .statusName {
+                color: $pending;
+            }
+        }
+        .paid {
+            background: $paidBg;
+            .circle {
+                background: $paid;
+            }
+            .statusName {
+                color: $paid;
+            }
+        }
+        .draft {
+            background: $draftBg;
+            .circle {
+                background: $draft;
+            }
+            .statusName {
+                color: $draft;
+            }
+        }
+    }
+    .invoiceInfo {
+        padding: 24px;
+        background: $white;
+        padding-bottom: 56px;
+        justify-content: space-between;
+        box-shadow: 0px 10px 10px -10px $invice-shadow;
+        border-radius: 8px;
+        .topSide {
+            display: flex;
+            flex-direction: column;
+            row-gap: 30px;
+            padding-bottom: 31px;
+            .head {
+                div {
+                    font-size: $size4;
+                    line-height: $height4;
+                    letter-spacing: -0.25px;
+                }
+                .hexId {
+                    color: $textBlack;
+                    font-weight: $bold;
+                    padding-bottom: 4px;
+                    span {
+                        color: $hex;
+                    }
+                }
+                .description {
+                    font-weight: $medium;
+                    color: $hex;
+                }
+            }
+            .senderAddress {
+                div {
+                    font-weight: $medium;
+                    font-size: $size5;
+                    line-height: $height5;
+                    letter-spacing: -0.229167px;
+                    color: $hex;
+                }
+            }
+        }
+        .midSide {
+            padding-bottom: 40px;
+            display: grid;
+            row-gap: 32px;
+            grid-auto-flow: row;
+            grid-template-areas:
+                'leftColumn rightColumn'
+                'emailBox emailBox';
+            .leftColumn {
+                grid-area: leftColumn;
+                display: flex;
+                flex-direction: column;
+                row-gap: 32px;
+                .invoiceDateBox,
+                .paymentDueBox {
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 12px;
+                    .title {
+                        font-weight: $medium;
+                        font-size: $size4;
+                        line-height: $height4;
+                        letter-spacing: -0.25px;
+                        color: $hex;
+                    }
+                    .date {
+                        font-weight: $bold;
+                        font-size: $size6;
+                        line-height: $height6;
+                        letter-spacing: -0.3125px;
+                        color: $textBlack;
+                    }
+                }
+            }
+            .rightColumn {
+                grid-area: rightColumn;
+                .clientName {
+                    .billTo {
+                        font-weight: $medium;
+                        font-size: $size4;
+                        line-height: $height4;
+                        letter-spacing: -0.25px;
+                        color: $hex;
+                    }
+                    .name {
+                        padding: 12px 0px 8px 0px;
+                        font-weight: $bold;
+                        font-size: $size6;
+                        line-height: $height6;
+                        letter-spacing: -0.3125px;
+                        color: $textBlack;
+                    }
+                }
+                .clientAddress {
+                    div {
+                        font-weight: $medium;
+                        font-size: $size5;
+                        line-height: $height5;
+                        letter-spacing: -0.229167px;
+                        color: $hex;
+                    }
+                }
+            }
+            .emailBox {
+                grid-area: emailBox;
+                .sentTo {
+                    padding-bottom: 12px;
+                    font-weight: $medium;
+                    font-size: $size4;
+                    line-height: $height4;
+                    letter-spacing: -0.25px;
+                    color: $hex;
+                }
+                .clientEmail {
+                    font-weight: $bold;
+                    font-size: $size6;
+                    line-height: $height6;
+                    letter-spacing: -0.3125px;
+                    color: $textBlack;
+                }
+            }
+        }
+        .botSide {
+            display: flex;
+            flex-direction: column;
+            border-radius: 8px;
+            .task {
+                background: $grey;
+                padding: 24px;
+                display: grid;
+                justify-content: space-between;
+                grid-template-areas:
+                    'title price'
+                    'quantity price';
+                .title {
+                    grid-area: title;
+                    padding-bottom: 8px;
+                    font-weight: $bold;
+                    font-size: $size4;
+                    line-height: $height4;
+                    letter-spacing: -0.25px;
+                    color: $textBlack;
+                }
+                .quantity {
+                    grid-area: quantity;
+                    font-weight: $bold;
+                    font-size: $size4;
+                    line-height: $height4;
+                    letter-spacing: -0.25px;
+                    color: $hex;
+                }
+                .price {
+                    grid-area: price;
+                    align-self: center;
+                    font-weight: $bold;
+                    font-size: $size4;
+                    line-height: $height4;
+                    letter-spacing: -0.25px;
+                    color: $textBlack;
+                }
+            }
+            .grandTotal {
+                padding: 24px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                background: $draft;
+                border-radius: 0px 0px 8px 8px;
+                .title {
+                    font-weight: $medium;
+                    font-size: $size5;
+                    line-height: $height5;
+                    letter-spacing: -0.229167px;
+                    color: $white;
+                }
+                .price {
+                    font-weight: $bold;
+                    font-size: $size2;
+                    line-height: $height7;
+                    letter-spacing: -0.416667px;
+                    color: $white;
+                }
+            }
+        }
+    }
+}
+
+.hidden {
+    display: none;
+}

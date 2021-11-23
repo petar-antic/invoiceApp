@@ -1,0 +1,15 @@
+@import '../Variables/Variables.scss';
+
+.goBack {
+    display: flex;
+    align-items: center;
+    column-gap: 23.66px;
+    padding-top: 32px;
+    span {
+        font-weight: $bold;
+        font-size: $size4;
+        line-height: $height4;
+        letter-spacing: -0.25px;
+        color: $textBlack;
+    }
+}

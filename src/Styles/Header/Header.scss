@@ -1,0 +1,100 @@
+@import '../Variables/Variables.scss';
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 32px;
+    .heading {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        .title {
+            font-size: $size2;
+            line-height: $height2;
+            font-weight: $bold;
+            margin-bottom: 4px;
+        }
+        .subtitle {
+            font-size: $size4;
+            line-height: $height4;
+            font-weight: $medium;
+            color: $body;
+        }
+    }
+    .right {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .dropdown {
+            margin-right: 18px;
+            .dropdownSelect {
+                .select {
+                    font-weight: $bold;
+                    font-size: $size4;
+                    line-height: $height4;
+                    letter-spacing: -0.25px;
+                    padding-right: 12px;
+                }
+                // .arrowDown {
+                //     // margin-top: 4px;
+                // }
+            }
+            .dropdownList {
+                background: $white;
+                box-shadow: 0px 3px 10px $box-shadoow;
+                border-radius: 8px;
+                list-style: none;
+                padding-inline-start: 0px;
+                padding: 10px 20px 10px 5px;
+                display: none;
+                .listItem {
+                    font-weight: $bold;
+                    font-size: $size4;
+                    line-height: $height4;
+                    letter-spacing: -0.25px;
+                    cursor: pointer;
+                    input {
+                        &[type='checkbox'] {
+                            cursor: pointer;
+                        }
+                        &[type='checkbox']:checked {
+                            appearance: none;
+                            -webkit-appearance: none;
+                            height: 13px;
+                            width: 13px;
+                            background-color: $purple;
+                            border-radius: 2px;
+                            cursor: pointer;
+                            padding: 3px;
+                            content: url('../../Assets/icon-check.svg');
+                        }
+                    }
+                }
+            }
+        }
+        .newBtn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            column-gap: 8px;
+            background: $purple;
+            color: $white;
+            padding: 6px 14px 6px 6px;
+            border-radius: 24px;
+            cursor: pointer;
+            .circle {
+                background: $white;
+                border-radius: 50%;
+                // cursor: pointer;
+                .plus {
+                    padding: 11px;
+                }
+            }
+            span {
+                font-weight: $bold;
+                font-size: $size4;
+                line-height: $height4;
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@500;700&display=swap");
+.goBack {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 23.66px;
+          column-gap: 23.66px;
+  padding-top: 32px;
+}
+
+.goBack span {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+  color: #0c0e16;
+}
+/*# sourceMappingURL=GoBack.css.map */

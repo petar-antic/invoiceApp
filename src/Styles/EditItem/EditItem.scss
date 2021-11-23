@@ -1,0 +1,62 @@
+@import '../Variables/Variables.scss';
+
+.editItem {
+    .heading {
+        padding: 24px 0px;
+    }
+    .itemInfo {
+        .billTo {
+            margin-top: 40px;
+        }
+        .billFrom,
+        .billTo {
+            display: flex;
+            flex-direction: column;
+            row-gap: 24px;
+            .title {
+                color: $purple;
+                font-weight: $bold;
+            }
+        }
+        .itemList {
+            margin-top: 66px;
+            h1 {
+                font-weight: $bold;
+                font-size: $size7;
+                line-height: $height7;
+                letter-spacing: -0.375px;
+                color: $hex;
+            }
+        }
+    }
+}
+
+.inputBox {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+.doubleInputBox {
+    display: flex;
+    column-gap: 23px;
+}
+.tripleInputBox {
+    display: flex;
+    column-gap: 16px;
+}
+span {
+    font-weight: 500;
+    font-size: $size4;
+    line-height: $height4;
+    letter-spacing: -0.25px;
+    color: $hex;
+}
+
+input {
+    padding: 17px 0 16px 20px;
+    border: 1px solid $borderInput;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: $bold;
+    width: 100%;
+}

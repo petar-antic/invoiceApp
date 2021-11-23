@@ -1,0 +1,112 @@
+@import '../Variables/Variables.scss';
+
+.invoice {
+    padding: 24px;
+    background: $white;
+    box-shadow: 0px 10px 10px -10px $invice-shadow;
+    border-radius: 8px;
+    display: grid;
+    row-gap: 24px;
+    grid-template-areas:
+        'hex name'
+        'bottomSide bottomSide';
+    .hex {
+        grid-area: hex;
+        color: $textBlack;
+        letter-spacing: -0.25px;
+        font-weight: $bold;
+        font-size: $size4;
+        line-height: $height4;
+        span {
+            color: $hex;
+        }
+    }
+    .name {
+        grid-area: name;
+        justify-self: flex-end;
+        color: $name;
+        font-weight: $medium;
+        font-size: $size4;
+        line-height: $height4;
+        letter-spacing: -0.25px;
+    }
+    .bottomSide {
+        grid-area: bottomSide;
+        display: grid;
+        row-gap: 8px;
+        grid-template-areas:
+            'date status'
+            'price status';
+        .status {
+            grid-area: status;
+        }
+        .status {
+            grid-area: status;
+            display: flex;
+            height: 40px;
+            width: 104px;
+            flex-direction: row;
+            align-self: center;
+            column-gap: 6px;
+            justify-content: center;
+            justify-self: flex-end;
+            align-items: center;
+            border-radius: 6px;
+            .statusName {
+                font-weight: $bold;
+                font-size: $size4;
+                line-height: $height4;
+                letter-spacing: -0.25px;
+                text-transform: capitalize;
+            }
+            .circle {
+                height: 8px;
+                width: 8px;
+                border-radius: 50%;
+            }
+        }
+        .pending {
+            background: $pendingBg;
+            .circle {
+                background: $pending;
+            }
+            .statusName {
+                color: $pending;
+            }
+        }
+        .paid {
+            background: $paidBg;
+            .circle {
+                background: $paid;
+            }
+            .statusName {
+                color: $paid;
+            }
+        }
+        .draft {
+            background: $draftBg;
+            .circle {
+                background: $draft;
+            }
+            .statusName {
+                color: $draft;
+            }
+        }
+        .date {
+            grid-area: date;
+            color: $body;
+            font-weight: $medium;
+            font-size: $size4;
+            line-height: $height4;
+            letter-spacing: -0.25px;
+        }
+        .price {
+            grid-area: price;
+            color: $textBlack;
+            font-weight: $bold;
+            font-size: $size3;
+            line-height: $height3;
+            letter-spacing: -0.8px;
+        }
+    }
+}
