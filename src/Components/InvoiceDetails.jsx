@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
-import '../Styles/ViewInvoice/ViewInvoice.css';
 import { InvoiceContext } from '../Contexts/InvoiceContext';
+import '../Styles/InvoiceDetails/InvoiceDetails.css';
 import GoBack from './GoBack';
+import Footer from './Footer';
+import EditItem from './EditItem';
 
-const ViewInvoice = () => {
+const InvoiceDetails = () => {
     const { invoiceList, activeInvoice } = useContext(InvoiceContext);
     const invoice = invoiceList.filter(
         (invoice) => invoice.id === activeInvoice
@@ -104,8 +106,10 @@ const ViewInvoice = () => {
                     </div>
                 </div>
             </div>
+            <Footer />
+            <EditItem />
         </>
     ));
 };
 
-export default ViewInvoice;
+export default InvoiceDetails;

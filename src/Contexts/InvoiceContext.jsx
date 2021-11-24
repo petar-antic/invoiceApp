@@ -6,12 +6,13 @@ export const InvoiceContext = React.createContext();
 export function InvoiceProvider({ children }) {
     const [invoiceList, setInvoices] = useState(invoices);
     const [activeInvoice, setActiceInvoice] = useState(0);
-    const showInvoice = activeInvoice !== 0;
+    const [show, setShowResults] = useState(true);
 
     function viewInvoice(id) {
         if (id === undefined) {
             return;
         } else {
+            setShowResults(false);
             setActiceInvoice(id);
         }
     }
@@ -21,9 +22,11 @@ export function InvoiceProvider({ children }) {
             value={{
                 invoiceList,
                 activeInvoice,
+                setActiceInvoice,
                 viewInvoice,
                 setInvoices,
-                showInvoice,
+                show,
+                setShowResults,
             }}
         >
             {children}

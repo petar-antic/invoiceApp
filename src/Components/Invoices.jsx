@@ -1,18 +1,15 @@
 import React, { useContext } from 'react';
 import '../Styles/Invoices/Invoices.css';
 import InvoicesList from './InvoicesList';
-import ViewInvoice from './ViewInvoice';
-// import EditItem from './EditItem';
 import { InvoiceContext } from '../Contexts/InvoiceContext';
+import InvoiceDetails from './InvoiceDetails';
 
 const Invoices = () => {
-    const { showInvoice } = useContext(InvoiceContext);
-    console.log(showInvoice);
+    const { show } = useContext(InvoiceContext);
     return (
         <>
-            {!showInvoice && <InvoicesList />}
-            {showInvoice && <ViewInvoice />}
-            {/* <EditItem /> */}
+            {show ? <InvoicesList /> : null}
+            {!show ? <InvoiceDetails /> : null}
         </>
     );
 };

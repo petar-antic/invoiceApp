@@ -6,6 +6,7 @@
     padding-top: 32px;
     .heading {
         display: flex;
+        justify-content: center;
         flex-direction: column;
         align-items: flex-start;
         .title {
@@ -13,6 +14,7 @@
             line-height: $height2;
             font-weight: $bold;
             margin-bottom: 4px;
+            color: $textBlack;
         }
         .subtitle {
             font-size: $size4;
@@ -34,10 +36,8 @@
                     line-height: $height4;
                     letter-spacing: -0.25px;
                     padding-right: 12px;
+                    color: $textBlack;
                 }
-                // .arrowDown {
-                //     // margin-top: 4px;
-                // }
             }
             .dropdownList {
                 background: $white;
@@ -85,7 +85,6 @@
             .circle {
                 background: $white;
                 border-radius: 50%;
-                // cursor: pointer;
                 .plus {
                     padding: 11px;
                 }
@@ -94,6 +93,7 @@
                 font-weight: $bold;
                 font-size: $size4;
                 line-height: $height4;
+                color: $white;
             }
         }
     }

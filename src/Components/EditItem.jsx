@@ -5,73 +5,94 @@ import { InvoiceContext } from '../Contexts/InvoiceContext';
 
 const EditItem = () => {
     const { invoiceList, activeInvoice } = useContext(InvoiceContext);
-    return (
-        <div className="editItem">
+    const invoice = invoiceList.filter(
+        (invoice) => invoice.id === activeInvoice
+    );
+    return invoice.map((invoice) => (
+        <div className="editItem hidden">
             <GoBack />
             <div class="heading">
-                <h1>Edit#</h1>
+                <h1>Edit#{invoice.id}</h1>
             </div>
             <div className="itemInfo">
                 <div className="billFrom">
                     <span className="title">Bill From</span>
                     <div className="inputBox">
                         <span>Street Address</span>
-                        <input></input>
+                        <input
+                            placeholder={invoice.senderAddress.street}
+                        ></input>
                     </div>
                     <div className="doubleInputBox">
                         <div className="leftSide">
                             <span>City</span>
-                            <input></input>
+                            <input
+                                placeholder={invoice.senderAddress.city}
+                            ></input>
                         </div>
                         <div className="rightSide">
                             <span>Post Code</span>
-                            <input></input>
+                            <input
+                                placeholder={invoice.senderAddress.postCode}
+                            ></input>
                         </div>
                     </div>
                     <div className="inputBox">
                         <span>Country</span>
-                        <input></input>
+                        <input
+                            placeholder={invoice.senderAddress.country}
+                        ></input>
                     </div>
                 </div>
                 <div className="billTo">
                     <span className="title">Bill To</span>
                     <div className="inputBox">
                         <span>Client's Name</span>
-                        <input></input>
+                        <input placeholder={invoice.clientName}></input>
                     </div>
                     <div className="inputBox">
                         <span>Client's Email</span>
-                        <input></input>
+                        <input placeholder={invoice.clientEmail}></input>
                     </div>
                     <div className="inputBox">
                         <span>Street Adress</span>
-                        <input></input>
+                        <input
+                            placeholder={invoice.clientAddress.street}
+                        ></input>
                     </div>
                     <div className="doubleInputBox">
                         <div className="leftSide">
                             <span>City</span>
-                            <input></input>
+                            <input
+                                placeholder={invoice.clientAddress.city}
+                            ></input>
                         </div>
                         <div className="rightSide">
                             <span>Post Code</span>
-                            <input></input>
+                            <input
+                                placeholder={invoice.clientAddress.postCode}
+                            ></input>
                         </div>
                     </div>
                     <div className="inputBox">
                         <span>Country</span>
-                        <input></input>
+                        <input
+                            placeholder={invoice.clientAddress.country}
+                        ></input>
                     </div>
                     <div className="inputBox">
                         <span>Invoice Date</span>
-                        <input></input>
+                        <input placeholder={invoice.createdAt}></input>
                     </div>
                     <div className="inputBox">
                         <span>Payment Terms</span>
-                        <input></input>
+                        <input
+                            placeholder={`Net ${invoice.paymentTerms} Days`}
+                        ></input>
                     </div>
                     <div className="inputBox">
                         <span>Project Description</span>
-                        <input></input>
+                        <input placeholder={invoice.description}></input>
                     </div>
                 </div>
                 <div className="itemList">
@@ -99,7 +120,7 @@ const EditItem = () => {
                 </div>
             </div>
         </div>
-    );
+    ));
 };
 
 export default EditItem;

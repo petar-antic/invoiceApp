@@ -56,7 +56,15 @@ input {
     padding: 17px 0 16px 20px;
     border: 1px solid $borderInput;
     border-radius: 4px;
-    font-size: 12px;
-    font-weight: $bold;
     width: 100%;
+    &::placeholder {
+        font-size: $size4;
+        line-height: $height4;
+        font-weight: $bold;
+        color: $textBlack;
+    }
+}
+
+.hidden {
+    display: none;
 }
