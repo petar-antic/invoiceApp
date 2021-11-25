@@ -1,14 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Spartan:wght@500;700&display=swap");
-.editItem .heading {
+.addItem .heading {
   padding: 24px 0px;
 }
 
-.editItem .itemInfo .billTo {
-  margin-top: 40px;
+.addItem .itemInformations .billTo {
+  margin: 40px 0px 66px 0px;
 }
 
-.editItem .itemInfo .billFrom,
-.editItem .itemInfo .billTo {
+.addItem .itemInformations .billFrom,
+.addItem .itemInformations .billTo {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -19,22 +19,31 @@
   row-gap: 24px;
 }
 
-.editItem .itemInfo .billFrom .title,
-.editItem .itemInfo .billTo .title {
+.addItem .itemInformations .billFrom .title,
+.addItem .itemInformations .billTo .title {
   color: #7c5dfa;
   font-weight: 700;
 }
 
-.editItem .itemInfo .itemList {
-  margin-top: 66px;
-}
-
-.editItem .itemInfo .itemList h1 {
+.addItem .itemInformations .itemList h1 {
   font-weight: 700;
   font-size: 18px;
   line-height: 32px;
   letter-spacing: -0.375px;
   color: #7e88c3;
+}
+
+.addItem .itemInformations .addNew {
+  background: #f9fafe;
+  border-radius: 24px;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 11px;
+  text-align: center;
+  letter-spacing: -0.25px;
+  color: #7e88c3;
+  padding: 17px 108px;
+  margin-bottom: 88px;
 }
 
 .inputBox {
@@ -57,11 +66,35 @@
 }
 
 .tripleInputBox {
+  margin-top: 24px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-column-gap: 16px;
           column-gap: 16px;
+  padding-bottom: 48px;
+}
+
+.tripleInputBox .left,
+.tripleInputBox .mid,
+.tripleInputBox .right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 10px;
+}
+
+.tripleInputBox .right .totalNumber {
+  padding-top: 17px;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+  color: #888eb0;
 }
 
 span {
@@ -79,35 +112,10 @@ input {
   width: 100%;
 }
 
-input::-webkit-input-placeholder {
+input[value] {
   font-size: 12px;
   line-height: 15px;
   font-weight: 700;
   color: #0c0e16;
 }
-
-input:-ms-input-placeholder {
-  font-size: 12px;
-  line-height: 15px;
-  font-weight: 700;
-  color: #0c0e16;
-}
-
-input::-ms-input-placeholder {
-  font-size: 12px;
-  line-height: 15px;
-  font-weight: 700;
-  color: #0c0e16;
-}
-
-input::placeholder {
-  font-size: 12px;
-  line-height: 15px;
-  font-weight: 700;
-  color: #0c0e16;
-}
-
-.hidden {
-  display: none;
-}
-/*# sourceMappingURL=EditItem.css.map */
+/*# sourceMappingURL=AddInvoice.css.map */

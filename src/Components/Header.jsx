@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../Styles/Header/Header.css';
 import plus from '../Assets/icon-plus.svg';
 import arrowDown from '../Assets/icon-arrow-down.svg';
+import { Link } from 'react-router-dom';
 
 function Header() {
+    const [show, setShow] = useState(false);
     return (
         <div className="header">
             <div className="heading">
@@ -13,34 +15,40 @@ function Header() {
             <div className="right">
                 <div className="dropdown">
                     <div className="dropdownSelect">
-                        <span className="select">Filter</span>
+                        <span className="select" type="button">
+                            Filter
+                        </span>
                         <img
                             className="arrowDown"
                             src={arrowDown}
                             alt="arrowDown"
+                            type="button"
+                            onClick={setShow}
                         />
                     </div>
-                    <ol className="dropdownList">
-                        <li className="listItem">
-                            <input type="checkbox" />
-                            <span>Draft</span>
-                        </li>
-                        <li className="listItem">
-                            <input type="checkbox" />
-                            <span>Panding</span>
-                        </li>
-                        <li className="listItem">
-                            <input type="checkbox" />
-                            <span>Paid</span>
-                        </li>
-                    </ol>
+                    {show ? (
+                        <ol className="dropdownList">
+                            <li className="listItem">
+                                <input type="checkbox" />
+                                <span>Draft</span>
+                            </li>
+                            <li className="listItem">
+                                <input type="checkbox" />
+                                <span>Panding</span>
+                            </li>
+                            <li className="listItem">
+                                <input type="checkbox" />
+                                <span>Paid</span>
+                            </li>
+                        </ol>
+                    ) : null}
                 </div>
-                <div className="newBtn">
+                <Link className="newBtn" to={`/add/invoice`}>
                     <div className="circle">
                         <img className="plus" src={plus} alt="plus" />
                     </div>
                     <span>New</span>
-                </div>
+                </Link>
             </div>
         </div>
     );

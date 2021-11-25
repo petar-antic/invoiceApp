@@ -1,18 +1,21 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import '../Styles/GoBack/GoBack.css';
 import arrowLeft from '../Assets/icon-arrow-left.svg';
-import { InvoiceContext } from '../Contexts/InvoiceContext';
+import { useHistory } from 'react-router-dom';
 
 const GoBack = () => {
-    const { setShowResults } = useContext(InvoiceContext);
+    let history = useHistory();
     return (
-        <div
-            className="goBack"
-            type="button"
-            onClick={() => setShowResults(true)}
-        >
-            <img src={arrowLeft} alt="Go Back" />
-            <span>Go Back</span>
+        <div className="goBack">
+            <img
+                src={arrowLeft}
+                alt="Go Back"
+                onClick={history.goBack}
+                type="button"
+            />
+            <span onClick={history.goBack} type="button">
+                Go Back
+            </span>
         </div>
     );
 };

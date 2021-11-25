@@ -1,15 +1,15 @@
 import React, { useContext } from 'react';
-import { InvoiceContext } from '../Contexts/InvoiceContext';
 import '../Styles/InvoiceDetails/InvoiceDetails.css';
 import GoBack from './GoBack';
-import Footer from './Footer';
-import EditItem from './EditItem';
+import InvoiceDetailsFooter from './InvoiceDetailsFooter';
+import { InvoiceContext } from '../App';
+import { useParams } from 'react-router';
 
 const InvoiceDetails = () => {
-    const { invoiceList, activeInvoice } = useContext(InvoiceContext);
-    const invoice = invoiceList.filter(
-        (invoice) => invoice.id === activeInvoice
-    );
+    const { invoiceList } = useContext(InvoiceContext);
+    const { id } = useParams();
+
+    const invoice = invoiceList.filter((invoice) => invoice.id === id);
     return invoice.map((invoice) => (
         <>
             <GoBack />
@@ -106,8 +106,7 @@ const InvoiceDetails = () => {
                     </div>
                 </div>
             </div>
-            <Footer />
-            <EditItem />
+            <InvoiceDetailsFooter />
         </>
     ));
 };

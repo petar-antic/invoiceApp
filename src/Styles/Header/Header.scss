@@ -40,13 +40,13 @@
                 }
             }
             .dropdownList {
+                position: absolute;
                 background: $white;
                 box-shadow: 0px 3px 10px $box-shadoow;
                 border-radius: 8px;
                 list-style: none;
                 padding-inline-start: 0px;
                 padding: 10px 20px 10px 5px;
-                display: none;
                 .listItem {
                     font-weight: $bold;
                     font-size: $size4;
@@ -82,6 +82,7 @@
             padding: 6px 14px 6px 6px;
             border-radius: 24px;
             cursor: pointer;
+            text-decoration: none;
             .circle {
                 background: $white;
                 border-radius: 50%;

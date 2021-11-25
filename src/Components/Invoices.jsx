@@ -1,16 +1,16 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import '../Styles/Invoices/Invoices.css';
-import InvoicesList from './InvoicesList';
-import { InvoiceContext } from '../Contexts/InvoiceContext';
-import InvoiceDetails from './InvoiceDetails';
+import Invoice from './Invoice';
+import Header from './Header';
 
 const Invoices = () => {
-    const { show } = useContext(InvoiceContext);
     return (
-        <>
-            {show ? <InvoicesList /> : null}
-            {!show ? <InvoiceDetails /> : null}
-        </>
+        <div className="invoices">
+            <Header />
+            <ul className="invoiceList">
+                <Invoice />
+            </ul>
+        </div>
     );
 };
 

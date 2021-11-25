@@ -2,6 +2,8 @@
 
 #app {
     font-family: $fontFamily;
+    height: 100vh;
+    background: $lightBg;
     .container {
         background: $lightBg;
         padding: 0 24px;

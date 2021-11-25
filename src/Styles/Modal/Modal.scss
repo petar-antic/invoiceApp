@@ -1,0 +1,69 @@
+@import '../Variables/Variables.scss';
+
+.confirmDel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .overlay {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background-color: $modalBg;
+        // z-index: 100;
+    }
+    .modalBody {
+        position: fixed;
+        top: 39%;
+        // transform: (-50%, -50%);
+        background-color: $white;
+        padding: 32px;
+        margin: auto 24px;
+        box-shadow: 0px 10px 10px -10px $invice-shadow;
+        border-radius: 8px;
+        h1 {
+            font-weight: $bold;
+            font-size: $size2;
+            line-height: $height7;
+            letter-spacing: -0.416667px;
+            color: $textBlack;
+        }
+        p {
+            font-weight: 500;
+            font-size: $size4;
+            line-height: $height2;
+            letter-spacing: -0.25px;
+            color: $body;
+        }
+        .buttons {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+            row-gap: 8px;
+            .cancel {
+                background-color: $grey;
+                padding: 17px 23px 16px 24px;
+                color: $hex;
+                font-size: $size4;
+                line-height: $height4;
+                letter-spacing: -0.25px;
+                font-weight: $bold;
+                border-radius: 24px;
+                text-decoration: none;
+            }
+            .delete {
+                background-color: $denger;
+                padding: 17px 24px;
+                color: $white;
+                font-size: $size4;
+                line-height: $height4;
+                letter-spacing: -0.25px;
+                font-weight: $bold;
+                border-radius: 24px;
+                text-decoration: none;
+            }
+        }
+    }
+}

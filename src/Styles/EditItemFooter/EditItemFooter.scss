@@ -1,0 +1,35 @@
+@import '../Variables/Variables.scss';
+
+.addItemFooter {
+    background: $white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 8px;
+    padding: 22px 0px;
+    position: relative;
+    width: 100vw;
+    left: calc(-50vw + 50%);
+    .cancel {
+        background-color: $grey;
+        padding: 17px 23px 16px 24px;
+        color: $hex;
+        font-size: $size4;
+        line-height: $height4;
+        letter-spacing: -0.25px;
+        font-weight: $bold;
+        border-radius: 24px;
+        text-decoration: none;
+    }
+    .save {
+        background-color: $purple;
+        padding: 17px 28px;
+        color: $white;
+        font-size: $size4;
+        line-height: $height4;
+        letter-spacing: -0.25px;
+        font-weight: $bold;
+        border-radius: 24px;
+    }
+}

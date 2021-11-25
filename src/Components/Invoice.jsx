@@ -1,14 +1,17 @@
 import React, { useContext } from 'react';
 import '../Styles/Invoice/Invoice.css';
-import { InvoiceContext } from '../Contexts/InvoiceContext';
+import { InvoiceContext } from '../App';
+import { Link } from 'react-router-dom';
 
 const Invoice = () => {
-    const { invoiceList, viewInvoice } = useContext(InvoiceContext);
+    const { invoiceList, findActiveInvoice } = useContext(InvoiceContext);
     return invoiceList.map((invoice) => (
-        <li
+        <Link
             className="invoice"
+            key={invoice.id}
             id="invoiceBtn"
-            onClick={() => viewInvoice(invoice.id)}
+            to={`/invoice/${invoice.id}`}
+            onClick={() => findActiveInvoice(invoice.id)}
         >
             <div className="hex">
                 <span>#</span>
@@ -23,7 +26,7 @@ const Invoice = () => {
                     <div className="statusName">{invoice.status}</div>
                 </div>
             </div>
-        </li>
+        </Link>
     ));
 };
 

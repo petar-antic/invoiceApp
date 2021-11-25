@@ -10,6 +10,7 @@
     grid-template-areas:
         'hex name'
         'bottomSide bottomSide';
+    text-decoration: none;
     .hex {
         grid-area: hex;
         color: $textBlack;

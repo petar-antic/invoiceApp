@@ -9,6 +9,7 @@
   -webkit-column-gap: 23.66px;
           column-gap: 23.66px;
   padding-top: 32px;
+  text-decoration: none;
 }
 
 .goBack span {

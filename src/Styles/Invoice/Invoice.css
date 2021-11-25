@@ -9,6 +9,7 @@
   display: grid;
   row-gap: 24px;
       grid-template-areas: 'hex name' 'bottomSide bottomSide';
+  text-decoration: none;
 }
 
 .invoice .hex {
