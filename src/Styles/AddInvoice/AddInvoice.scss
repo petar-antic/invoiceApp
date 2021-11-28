@@ -1,0 +1,103 @@
+@import '../Variables/Variables.scss';
+
+.addItem {
+    .heading {
+        padding: 24px 0px;
+    }
+    .itemInformations {
+        .billTo {
+            margin: 40px 0px 66px 0px;
+        }
+        .billFrom,
+        .billTo {
+            display: flex;
+            flex-direction: column;
+            row-gap: 24px;
+            .title {
+                color: $purple;
+                font-weight: $bold;
+            }
+            .inputBox {
+                #calendar {
+                    background-image: url('../../Assets/icon-calendar.svg');
+                    background-repeat: no-repeat;
+                    background-position: right 16px bottom 16px;
+                }
+            }
+        }
+        .itemList {
+            h1 {
+                font-weight: $bold;
+                font-size: $size7;
+                line-height: $height7;
+                letter-spacing: -0.375px;
+                color: $hex;
+            }
+        }
+        .addNew {
+            background: $addItem;
+            border-radius: 24px;
+            font-weight: $bold;
+            font-size: $size4;
+            line-height: $size5;
+            text-align: center;
+            letter-spacing: -0.25px;
+            color: $hex;
+            padding: 17px 108px;
+            margin-bottom: 88px;
+        }
+    }
+}
+
+.inputBox {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+.doubleInputBox {
+    display: flex;
+    column-gap: 23px;
+}
+.tripleInputBox {
+    margin-top: 24px;
+    display: flex;
+    column-gap: 16px;
+    padding-bottom: 48px;
+    .left,
+    .mid,
+    .right {
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+    }
+    .right {
+        .totalNumber {
+            padding-top: 17px;
+            font-weight: bold;
+            font-size: $size4;
+            line-height: $height4;
+            letter-spacing: -0.25px;
+            color: #888eb0;
+        }
+    }
+}
+span {
+    font-weight: 500;
+    font-size: $size4;
+    line-height: $height4;
+    letter-spacing: -0.25px;
+    color: $hex;
+}
+
+input {
+    padding: 17px 0 16px 20px;
+    border: 1px solid $borderInput;
+    border-radius: 4px;
+    width: 100%;
+    &[value] {
+        font-size: $size4;
+        line-height: $height4;
+        font-weight: $bold;
+        color: $textBlack;
+    }
+}

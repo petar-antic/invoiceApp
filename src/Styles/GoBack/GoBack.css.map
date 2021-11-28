@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "ACCA,OAAO,CAAC,iFAAI;ADCZ,AAAA,OAAO,CAAC;EACJ,OAAO,EAAE,IAAI;EACb,WAAW,EAAE,MAAM;EACnB,UAAU,EAAE,OAAO;EACnB,WAAW,EAAE,IAAI;EACjB,eAAe,EAAE,IAAI;CAQxB;;AAbD,AAMI,OANG,CAMH,IAAI,CAAC;EACD,WAAW,ECwCZ,GAAG;EDvCF,SAAS,ECyBT,IAAI;EDxBJ,WAAW,ECgCT,IAAI;ED/BN,cAAc,EAAE,OAAO;EACvB,KAAK,ECID,OAAO;CDHd",
+    "sources": [
+        "GoBack.scss",
+        "../Variables/Variables.scss"
+    ],
+    "names": [],
+    "file": "GoBack.css"
+}
