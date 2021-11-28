@@ -25,6 +25,13 @@
   font-weight: 700;
 }
 
+.addItem .itemInformations .billFrom .inputBox #calendar,
+.addItem .itemInformations .billTo .inputBox #calendar {
+  background-image: url("../../Assets/icon-calendar.svg");
+  background-repeat: no-repeat;
+  background-position: right 16px bottom 16px;
+}
+
 .addItem .itemInformations .itemList h1 {
   font-weight: 700;
   font-size: 18px;

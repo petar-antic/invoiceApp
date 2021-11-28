@@ -17,6 +17,13 @@
                 color: $purple;
                 font-weight: $bold;
             }
+            .inputBox {
+                #calendar {
+                    background-image: url('../../Assets/icon-calendar.svg');
+                    background-repeat: no-repeat;
+                    background-position: right 16px bottom 16px;
+                }
+            }
         }
         .itemList {
             h1 {

@@ -1,7 +1,8 @@
 import React, { useContext } from 'react';
-import '../Styles/Invoice/Invoice.css';
 import { InvoiceContext } from '../App';
 import { Link } from 'react-router-dom';
+
+import '../Styles/Invoice/Invoice.css';
 
 const Invoice = () => {
     const { invoiceList, findActiveInvoice } = useContext(InvoiceContext);

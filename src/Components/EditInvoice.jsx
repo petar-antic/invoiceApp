@@ -5,8 +5,7 @@ import { InvoiceContext } from '../App';
 import { useParams } from 'react-router';
 
 const EditItem = () => {
-    const { invoiceList, idChange, descriptionChange, state } =
-        useContext(InvoiceContext);
+    const { invoiceList } = useContext(InvoiceContext);
     const { id } = useParams();
     const invoice = invoiceList.filter((invoice) => invoice.id === id);
     return invoice.map((invoice) => (

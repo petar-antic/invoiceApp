@@ -24,8 +24,9 @@ export default function App() {
     };
 
     const addInvoice = (newObject) => {
-        const array = invoiceList.concat(newObject);
-        setInvoices(array);
+        const newData = invoiceList.concat(newObject);
+        // const newData = { ...invoiceList, newObject };
+        setInvoices(newData);
     };
 
     const deleteInvoice = (id) => {

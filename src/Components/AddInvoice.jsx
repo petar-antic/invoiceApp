@@ -1,15 +1,77 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../Styles/AddInvoice/AddInvoice.css';
 import AddItemFooter from './AddInvoiceFooter';
 import GoBack from './GoBack';
-import { useParams } from 'react-router';
-import data from '../Constants/data.json';
+import Item from './Item';
 
 const AddInvoice = () => {
-    const { id } = useParams();
-    const [invoice, setInvoice] = useState(data);
-    console.log(JSON.stringify(invoice));
-    const newData = [JSON.stringify(invoice)];
+    const [items, setItems] = useState([
+        {
+            name: '',
+            quantity: 0,
+            price: 0,
+            total: 0,
+        },
+    ]);
+    const [invoice, setInvoice] = useState({
+        id: '',
+        createdAt: '',
+        paymentDue: '',
+        description: '',
+        paymentTerms: 0,
+        clientName: '',
+        clientEmail: '',
+        status: '',
+        senderAddress: {
+            street: '',
+            city: '',
+            postCode: '',
+            country: '',
+        },
+        clientAddress: {
+            street: '',
+            city: '',
+            postCode: '',
+            country: '',
+        },
+        items: items,
+        total: 0,
+    });
+
+    useEffect(() => {
+        setInvoice({
+            ...invoice,
+            items: items,
+        });
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [items]);
+
+    const setItemss = (item, index) => {
+        let updatedArr = [...items];
+        // let updatedElement = updatedArr[index];
+        // updatedElement = item;
+        updatedArr[index] = item;
+        setItems(updatedArr);
+    };
+
+    useEffect(() => {
+        setInvoice({
+            ...invoice,
+            id: generateId(),
+        });
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
+    const abc = 'qwertyuiopasdfghjklzxcvbnm';
+
+    const generateId = () => {
+        let stringPart = `${abc.charAt(
+            Math.floor(Math.random() * (26 + 1))
+        )}${abc.charAt(Math.floor(Math.random() * (26 + 1)))}`.toUpperCase();
+        let numberPart = Math.floor(Math.random() * (9999 - 1000 + 1) + 1000);
+        return `${stringPart}${numberPart.toString()}`;
+    };
+
     return (
         <>
             <div className="addItem">
@@ -24,11 +86,14 @@ const AddInvoice = () => {
                             <span>Street Address</span>
                             <input
                                 type="text"
-                                value={invoice.street}
+                                value={invoice.senderAddress.street}
                                 onChange={(e) =>
                                     setInvoice({
                                         ...invoice,
-                                        street: e.target.value,
+                                        senderAddress: {
+                                            ...invoice.senderAddress,
+                                            street: e.target.value,
+                                        },
                                     })
                                 }
                             />
@@ -38,11 +103,14 @@ const AddInvoice = () => {
                                 <span>City</span>
                                 <input
                                     type="text"
-                                    value={invoice.city}
+                                    value={invoice.senderAddress.city}
                                     onChange={(e) =>
                                         setInvoice({
                                             ...invoice,
-                                            city: e.target.value,
+                                            senderAddress: {
+                                                ...invoice.senderAddress,
+                                                city: e.target.value,
+                                            },
                                         })
                                     }
                                 />
@@ -51,11 +119,14 @@ const AddInvoice = () => {
                                 <span>Post Code</span>
                                 <input
                                     type="text"
-                                    value={invoice.postCode}
+                                    value={invoice.senderAddress.postCode}
                                     onChange={(e) =>
                                         setInvoice({
                                             ...invoice,
-                                            postCode: e.target.value,
+                                            senderAddress: {
+                                                ...invoice.senderAddress,
+                                                postCode: e.target.value,
+                                            },
                                         })
                                     }
                                 />
@@ -65,11 +136,14 @@ const AddInvoice = () => {
                             <span>Country</span>
                             <input
                                 type="text"
-                                value={invoice.country}
+                                value={invoice.senderAddress.country}
                                 onChange={(e) =>
                                     setInvoice({
                                         ...invoice,
-                                        country: e.target.value,
+                                        senderAddress: {
+                                            ...invoice.senderAddress,
+                                            country: e.target.value,
+                                        },
                                     })
                                 }
                             />
@@ -107,11 +181,14 @@ const AddInvoice = () => {
                             <span>Street Adress</span>
                             <input
                                 type="text"
-                                value={invoice.clientAddress}
+                                value={invoice.clientAddress.street}
                                 onChange={(e) =>
                                     setInvoice({
                                         ...invoice,
-                                        clientAddress: e.target.value,
+                                        clientAddress: {
+                                            ...invoice.clientAddress,
+                                            street: e.target.value,
+                                        },
                                     })
                                 }
                             />
@@ -121,11 +198,14 @@ const AddInvoice = () => {
                                 <span>City</span>
                                 <input
                                     type="text"
-                                    value={invoice.clientCity}
+                                    value={invoice.clientAddress.city}
                                     onChange={(e) =>
                                         setInvoice({
                                             ...invoice,
-                                            clientCity: e.target.value,
+                                            clientAddress: {
+                                                ...invoice.clientAddress,
+                                                city: e.target.value,
+                                            },
                                         })
                                     }
                                 />
@@ -134,11 +214,14 @@ const AddInvoice = () => {
                                 <span>Post Code</span>
                                 <input
                                     type="text"
-                                    value={invoice.clientPostCode}
+                                    value={invoice.clientAddress.postCode}
                                     onChange={(e) =>
                                         setInvoice({
                                             ...invoice,
-                                            clientPostCode: e.target.value,
+                                            clientAddress: {
+                                                ...invoice.clientAddress,
+                                                postCode: e.target.value,
+                                            },
                                         })
                                     }
                                 />
@@ -148,11 +231,14 @@ const AddInvoice = () => {
                             <span>Country</span>
                             <input
                                 type="text"
-                                value={invoice.clientCountry}
+                                value={invoice.clientAddress.country}
                                 onChange={(e) =>
                                     setInvoice({
                                         ...invoice,
-                                        clientCountry: e.target.value,
+                                        clientAddress: {
+                                            ...invoice.clientAddress,
+                                            country: e.target.value,
+                                        },
                                     })
                                 }
                             />
@@ -160,6 +246,7 @@ const AddInvoice = () => {
                         <div className="inputBox">
                             <span>Invoice Date</span>
                             <input
+                                id="calendar"
                                 type="text"
                                 value={invoice.createdAt}
                                 onChange={(e) =>
@@ -199,33 +286,33 @@ const AddInvoice = () => {
                     </div>
                     <div className="itemList">
                         <h1>Item List</h1>
-                        <div className="item">
-                            <div className="inputBox">
-                                <span>Item Name</span>
-                                <input />
-                            </div>
-                            <div className="tripleInputBox">
-                                <div className="left">
-                                    <span>Qty.</span>
-                                    <input />
-                                </div>
-                                <div className="mid">
-                                    <span>Price</span>
-                                    <input />
-                                </div>
-                                <div className="right">
-                                    <span>Total</span>
-                                    <span className="totalNumber">.00</span>
-                                </div>
-                            </div>
-                        </div>
                     </div>
-                    <div className="addNew" type="button">
+                    {items.map((item, index) => (
+                        <Item
+                            item={item}
+                            itemIndex={index}
+                            setItemss={(e, i) => setItemss(e, i)}
+                        />
+                    ))}
+
+                    <div
+                        className="addNew"
+                        type="button"
+                        onClick={() => {
+                            const newItem = {
+                                name: '',
+                                quantity: 0,
+                                price: 0,
+                                total: 0,
+                            };
+                            setItems([...items, newItem]);
+                        }}
+                    >
                         + Add New Item
                     </div>
                 </div>
             </div>
-            <AddItemFooter />
+            <AddItemFooter invoice={invoice} />
         </>
     );
 };
