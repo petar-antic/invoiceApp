@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import '../Styles/Header/Header.css';
 import plus from '../Assets/icon-plus.svg';
 import arrowDown from '../Assets/icon-arrow-down.svg';
 import { Link } from 'react-router-dom';
+import { InvoiceContext } from '../App';
 
 function Header() {
+    const { toggleFilter } = useContext(InvoiceContext);
     const [show, setShow] = useState(false);
     return (
         <div className="header">
@@ -23,21 +25,30 @@ function Header() {
                             src={arrowDown}
                             alt="arrowDown"
                             type="button"
-                            onClick={setShow}
+                            onClick={() => setShow(!show)}
                         />
                     </div>
                     {show ? (
                         <ol className="dropdownList">
                             <li className="listItem">
-                                <input type="checkbox" />
+                                <input
+                                    type="checkbox"
+                                    onClick={() => toggleFilter('draft')}
+                                />
                                 <span>Draft</span>
                             </li>
                             <li className="listItem">
-                                <input type="checkbox" />
+                                <input
+                                    type="checkbox"
+                                    onClick={() => toggleFilter('pending')}
+                                />
                                 <span>Panding</span>
                             </li>
                             <li className="listItem">
-                                <input type="checkbox" />
+                                <input
+                                    type="checkbox"
+                                    onClick={() => toggleFilter('paid')}
+                                />
                                 <span>Paid</span>
                             </li>
                         </ol>
@@ -45,7 +56,12 @@ function Header() {
                 </div>
                 <Link className="newBtn" to={`/add/invoice`}>
                     <div className="circle">
-                        <img className="plus" src={plus} alt="plus" />
+                        <img
+                            className="plus"
+                            src={plus}
+                            alt="plus"
+                            onClick={toggleFilter}
+                        />
                     </div>
                     <span>New</span>
                 </Link>
